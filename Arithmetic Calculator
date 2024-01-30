@@ -1,0 +1,68 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,add,sub,multi,div,num;
+
+    printf("Enter a: ");
+    scanf("%d",&a);
+    printf("Enter b: ");
+    scanf("%d",&b);
+
+    printf("1.Addition \n");
+    printf("2.Subtraction \n");
+    printf("3.Multiplication \n");
+    printf("4.Division \n");
+
+    printf("Enter choice : ");
+    scanf("%d",&num);
+    if (num==1)
+    {
+        int x = a + b;
+        printf("a+b= %d \n",x);
+    }
+    else if (num==2)
+    {
+        int y = a-b;
+        printf("a-b= %d",y);
+    }
+    else if (num==3)
+    {
+        int z = a*b;
+        printf("a*b= %d",z);
+    }
+    else if (num==4)
+    {
+        if(b==0)
+        {
+            printf("Can't devided by zero.");
+        }
+        else
+        {
+            printf("1.Quotient \n");
+            printf("2.Reminder \n");
+            int n;
+            printf("Enter choice : ");
+            scanf("%d",&n);
+
+            int i,j;
+
+            switch(n)
+            {
+            case 1:
+                i = a/b;
+                printf("a/b= %d",i);
+                break;
+            case 2:
+                j = a%b;
+                printf("a%%b= %d",j);
+                break;
+            default :
+                printf("Invalid Choice.");
+
+            }
+        }
+    }
+
+
+    return 0;
+}
