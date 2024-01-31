@@ -1,0 +1,46 @@
+#include<stdio.h>
+
+int main()
+{
+    int units;
+    printf("Enter the amount of unit: ");
+    scanf("%d",&units);
+
+    float bill = 0, surcharge = 0, final_bill = 0;
+
+    if (units <= 50)
+    {
+      bill += units * 0.50;
+    }
+    else if (units > 50 && units <= 150 )
+    {
+        bill += 50 * 0.50;
+        bill += (units - 50 ) * 0.75;
+    }
+    else if (units > 150 && units <= 250)
+    {
+        bill += 50 * 0.50;
+        bill += 100 * 0.75;
+        bill += (units - 150) * 1.20;
+    }
+    else if (units > 250)
+    {
+        bill += 50 * 0.50;
+        bill += 100 * 0.75;
+        bill += 100 * 1.20;
+        bill += (units - 250) * 1.50;
+    }
+    else
+    {
+        printf("Invalid Input.");
+        return 1;
+    }
+
+    surcharge = bill * 0.20;
+
+    final_bill = bill + surcharge;
+
+    printf("%.2f",final_bill);
+
+    return 0;
+}
