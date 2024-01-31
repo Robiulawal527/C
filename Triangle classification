@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    double x1,x2,y1,y2,z1,z2;
+    printf("Enter x1 x2 y1 y2 z1 z2 : \n");
+    scanf("%lf %lf %lf %lf %lf %lf",&x1,&x2,&y1,&y2,&z1,&z2);
+
+    //Equilateral = three sides are same(in size).
+    //Isosceles = two sides are same .
+    //Scalene = three sides are different.
+
+    //distance of sides = AB , BC, CA
+    double AB = sqrt(pow(x2-x1, 2) + pow(y2-y1, 2));
+    printf("%lf \n",AB);
+    double BC = sqrt(pow(y2-y1, 2) + pow(z2-z1, 2));
+    printf("%lf \n",BC);
+    double CA = sqrt(pow(z2-z1, 2) + pow(x2-x1, 2));
+    printf("%lf \n",CA);
+
+    if(AB==BC && BC==CA)
+    {
+        printf("Equilateral");
+    }
+    else if(AB!=BC && BC!=CA)
+    {
+        printf("Scalene");
+    }
+    else if(AB==BC || BC==CA || CA==AB)
+    {
+        printf("Isosceles");
+    }
+    else
+    {
+        printf("Invalid");
+    }
+
+
+    return 0;
+}
