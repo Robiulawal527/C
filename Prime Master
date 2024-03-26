@@ -1,0 +1,80 @@
+#include <stdio.h>
+
+///function prototype.
+int isPrime(int n);
+int isPalindrome(int n);
+int isSumprime(int n);
+
+int main()
+{
+    int n;
+    printf("Enter a number: ");
+    scanf("%d",&n);
+
+    int a = isPrime(n);
+    int b = isPalindrome(n);
+    int c = isSumprime(n);
+
+    if(a&&b&&c)
+        printf("Yes");
+    else
+        printf("No");
+
+    return 0;
+}
+///checking prime number.
+int isPrime(int n)
+{
+    if (n<=1)
+    {
+        return 0;
+    }
+    else if(n==2)
+        return 1;
+
+    for (int i=2; i<n; i++)
+    {
+        if (n%i==0)
+        {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+///checking palindrome.
+int isPalindrome(int n)
+{
+    int isPal = 0;
+    int original = n;
+    int digit=0, rev = 0;
+
+    while(n>0)
+    {
+        digit = n % 10;
+        rev = rev * 10 + digit;
+        n = n/10;
+    }
+    if(original == rev)
+    {
+        isPal = 1;
+    }
+
+
+    return isPal;
+}
+///checking sum of the number prime or not.
+int isSumprime(int n)
+{
+    int digit =0, sum=0;
+
+    while(n>0)
+    {
+        digit = n % 10;
+        sum = sum + digit;
+        n = n/10;
+    }
+
+    return isPrime(sum);
+}
+
